@@ -1,0 +1,29 @@
+html {
+	font-family: Helvetica;
+	color: white;
+	background: #000;
+}
+
+h1 {
+	font-family: $font-thunder;
+	text-transform: uppercase;
+	font-size: 3rem;
+	font-weight: 700;
+}
+h2 {
+	font-family: $font-thunder;
+	text-transform: uppercase;
+	font-size: 3rem;
+	font-weight: 500;
+}
+h3 {
+	font-family: $font-thunder;
+	text-transform: uppercase;
+	font-size: 3rem;
+	font-weight: 300;
+}
+
+main {
+	background: url('@img/pexels-loc-dang-1626557.jpg') 0 0 no-repeat;
+	object-fit: cover;
+}
