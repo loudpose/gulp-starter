@@ -1,11 +1,21 @@
-# Gulp App Starter
+# Gulp Starter
 
-Frontend environment for building JavaScript applications using
-[Gulp](https://www.npmjs.com/package/gulp)
+<p align="center">
+  <a href="https://gulpjs.com">
+    <img height="257" width="114" src="https://raw.githubusercontent.com/gulpjs/artwork/master/gulp-2x.png">
+  </a>
+</p>
 
-Includes basic functionallity such as html, css, js compilation & minification.
-Fonts convertion. Images optimization and convertion to webp. Deployement to web
-via FTP.
+Frontend environment for building JavaScript applications using Gulp
+([npm](https://www.npmjs.com/package/gulp))
+
+## Contents
+
+- **PUG, SCSS, JS — compilation & minification**
+- **IMAGES — optimization & convertion to webp**
+- **FONTS — convertion OTF > TTF > WOFF & fonts.scss generation**
+- **SVG - svgSprite generation**
+- **FTP - deployement to web using FTP**
 
 ## Usage
 
@@ -19,31 +29,49 @@ npm run start
 
 ### Build for production
 
-Creates a minified output in the dist folder.
+Creates output in the "dist" folder. Use ":prod" for production, and ":dev" for
+development.
 
 ```
-npm run build
+npm run build:dev
+npm run build:prod
 ```
 
-### Optional features
+## Additional features
 
-Archive the dist folder contents.
+## FONTS
+
+Converts fonts from OTF to TTF. Then converts from TTF to WOFF & WOFF2. Then
+creates fonts.scss file. If fonts.scss already exists it will NOT overwrite it.
+So delete your fonts.scss if you need a new one.
 
 ```
-npm run zip
+npm run fonts:convert
 ```
+
+### FTP
 
 Build the dist folder, and then deploy it to server via FTP
 
 ```
-npm run ftp
+npm run deploy:ftp
 ```
+
+### SVG
 
 Takes a bunch of SVG files, optimizes them and bakes them into SVG sprites of
 several types:
 
 ```
 npm run svgSprive
+```
+
+### ZIP
+
+Archive the dist folder contents.
+
+```
+npm run zip
 ```
 
 ## Misc

@@ -1,17 +1,12 @@
 import { deleteAsync } from 'del';
 import zipPlugin from 'gulp-zip';
+import { join } from 'path';
+
 export const zip = () => {
-	deleteAsync(`./${app.path.rootFolder}.zip`);
+	deleteAsync(join(app.path.rootFolder, `project.zip`));
 	return app.gulp
-		.src(`${app.path.buildFolder}/**/*.*`, {})
-		.pipe(
-			app.plugins.plumber(
-				app.plugins.notify.onError({
-					title: 'ZIP',
-					message: 'Error: <%= error.message %>'
-				})
-			)
-		)
-		.pipe(zipPlugin(`${app.path.rootFolder}.zip`))
-		.pipe(app.gulp.dest('./'));
+		.src(join(app.path.buildFolder, '**', '*.*'), {})
+		.pipe(app.plugins.plumber({ errorHandler: app.onError('ZIP') }))
+		.pipe(zipPlugin(`project.zip`))
+		.pipe(app.gulp.dest(app.path.rootFolder));
 };
